@@ -3,6 +3,7 @@
 import tornado
 import tornado.web
 import tornado.autoreload
+import save_local
 
 
 the_ip = ''
@@ -30,7 +31,7 @@ class setIP(tornado.web.RequestHandler):
     def get(self, ip):
         global the_ip
         the_ip = ip
-        saveHosts(ip)
+        save_local.saveHosts(ip)
         self.write("ok")
 
 
@@ -42,18 +43,6 @@ class getIP(tornado.web.RequestHandler):
         global the_ip
         self.write(the_ip)
 
-
-def saveHosts(ip):
-    path_file = '/etc/hosts'
-    with open(path_file) as f:
-        lines = f.readlines()
-        print lines
-        curr = lines[:-1]
-        f.close()
-    f = open(path_file, 'w')
-    curr.append(u'%s mygit\n' % ip)
-    f.writelines(curr)
-    f.close()
 
 if __name__ == '__main__':
     import sys
