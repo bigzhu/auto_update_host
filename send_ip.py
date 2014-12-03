@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 import json
 import urllib2
+import sys
+import time
 the_ip = ''
 
 
@@ -13,4 +15,10 @@ def sendIP():
         the_ip = ip
 
 if __name__ == '__main__':
-    sendIP()
+    while True:
+        try:
+            sendIP()
+        except Exception:
+            info = sys.exc_info()
+            print str(info[1])
+        time.sleep(5
