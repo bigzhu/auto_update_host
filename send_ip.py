@@ -21,4 +21,4 @@ if __name__ == '__main__':
         except Exception:
             info = sys.exc_info()
             print str(info[1])
-        time.sleep(5
+        time.sleep(5)
