@@ -8,3 +8,9 @@ auto_update_host
 一旦改变了, 我们不知道外网 ip, 就没法使用了
 
 开发一个程序取外网 ip, 发送到阿里云上, 修改其 hosts
+
+## 文件说明
+
+* receive_ip.py 服务器端,部署在外网服务器上, 用于接收内网发来的 ip, 写入 highwe.net 的 hosts; 并需要时候返回 ip 给无知的客户端
+* send_ip.py 部署在192.168.1.8, 重新拨号导致 ip 变动时候,实时将 ip 告诉 highwe.net
+* save_local.py 各人使用的, 从 highwe.net 取到 ip, 并写入 hosts.需要 sudo 运行
