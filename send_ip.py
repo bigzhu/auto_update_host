@@ -13,6 +13,7 @@ def sendIP():
     if the_ip != ip:
         urllib2.urlopen('http://42.96.204.146:9001/setIP/%s' % ip)
         the_ip = ip
+        print 'new ip = %s' % ip
 
 if __name__ == '__main__':
     while True:
