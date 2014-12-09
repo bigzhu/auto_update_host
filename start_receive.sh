@@ -1,1 +1,1 @@
-sudo nohup python receive_ip.py &
+sudo nohup python -u receive_ip.py >> receive.log &
