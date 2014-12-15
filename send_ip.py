@@ -22,9 +22,9 @@ def sendIP():
 if __name__ == '__main__':
     while True:
         print str(datetime.now())
-        try:
-            sendIP()
-        except Exception:
-            info = sys.exc_info()
-            print str(info[1])
-        time.sleep(60)
+        #try:
+        sendIP()
+        #except Exception:
+        #    info = sys.exc_info()
+        #    print str(info[1])
+        time.sleep(5)
