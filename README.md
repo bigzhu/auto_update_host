@@ -17,5 +17,7 @@ auto_update_host
 
 ## 如何使用
 个人使用只需要以 sudo 方式来执行 auto_update_host.sh 就可以了, 因为需要写入 /etc/hosts 所以需要 root 权限
+
     sudo auto_update_host.sh
+
 每 5s 会自动同步一次
