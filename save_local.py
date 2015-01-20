@@ -22,12 +22,15 @@ def saveHosts(ip):
 
 if __name__ == '__main__':
     while True:
-        new_ip = urllib2.urlopen('http://42.96.204.146:9001/getIP').read()
-        if new_ip != '' and new_ip not in ip_list:
-            saveHosts(new_ip)
-            ip_list.append(new_ip)
-            if len(ip_list) > 4:
-                ip_list = []
-        else:
-            print 'same ip'
+        try:
+            new_ip = urllib2.urlopen('http://42.96.204.146:9001/getIP').read()
+            if new_ip != '' and new_ip not in ip_list:
+                saveHosts(new_ip)
+                ip_list.append(new_ip)
+                if len(ip_list) > 4:
+                    ip_list = []
+            else:
+                print 'same ip'
+        except Exception:
+            print "出错了"
         time.sleep(5)
