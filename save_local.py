@@ -23,7 +23,7 @@ def saveHosts(ip):
 if __name__ == '__main__':
     while True:
         try:
-            new_ip = urllib2.urlopen('http://42.96.204.146:9001/getIP').read()
+            new_ip = urllib2.urlopen('http://42.96.204.146:9001/getIP', timeout=10).read()
             if new_ip != '' and new_ip not in ip_list:
                 saveHosts(new_ip)
                 ip_list.append(new_ip)
