@@ -1,4 +1,4 @@
 #! /bin/bash
 . kill.sh
-killBz ./save_local.py
-nohup python ./save_local.py  &
+sudo killBz ./save_local.py
+nohup sudo python -u ./save_local.py  &
