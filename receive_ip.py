@@ -26,7 +26,9 @@ def getURLMap(the_globals):
 
 class setIP(tornado.web.RequestHandler):
 
-    '''登录页面'''
+    '''
+    设置 ip
+    '''
 
     def get(self, ip):
         global the_ip
@@ -37,7 +39,9 @@ class setIP(tornado.web.RequestHandler):
 
 class getIP(tornado.web.RequestHandler):
 
-    '''登录页面'''
+    '''
+    返回 ip
+    '''
 
     def get(self):
         global the_ip
