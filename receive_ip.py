@@ -33,7 +33,7 @@ class setIP(tornado.web.RequestHandler):
     def get(self, ip):
         global the_ip
         the_ip = ip
-        save_local.saveHosts(ip)
+        #save_local.saveHosts(ip)
         self.write("ok")
 
 
