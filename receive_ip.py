@@ -48,6 +48,14 @@ class getIP(tornado.web.RequestHandler):
         self.write(the_ip)
 
 
+class dump(tornado.web.RequestHandler):
+
+    def get(self):
+        global the_ip
+        print self.request
+        print self.request.uri
+        self.write(the_ip)
+
 if __name__ == '__main__':
     import sys
 
