@@ -53,7 +53,7 @@ class dump(tornado.web.RequestHandler):
     def get(self):
         global the_ip
         print self.request.uri
-        url = 'http://'+the_ip+':3000/'+self.request.uri
+        url = 'http://'+the_ip+':3000'+self.request.uri
         self.redirect(url)
 
 if __name__ == '__main__':
