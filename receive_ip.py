@@ -50,11 +50,10 @@ class getIP(tornado.web.RequestHandler):
 
 class dump(tornado.web.RequestHandler):
 
-    def get(self, url):
+    def get(self):
         global the_ip
         print self.request
         print self.request.uri
-        print url
         self.write(the_ip)
 
 if __name__ == '__main__':
@@ -68,6 +67,7 @@ if __name__ == '__main__':
 
     # routeo
     url_map = getURLMap(globals().copy())
+    url_map.append((r'/.*', dump))
 
     application = tornado.web.Application(url_map)
 
